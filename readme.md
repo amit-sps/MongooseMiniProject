@@ -1,6 +1,6 @@
-#Mongoose Mini Project
-<br>
-##Topic Covered
+# Mongoose Mini Project
+
+## Topic Covered
 
 <ul>
 <li>Mongoose Connection</li>
