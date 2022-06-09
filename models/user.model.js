@@ -1,4 +1,5 @@
 const Mongoose = require("mongoose");
+const validator=require("validator");
 const UserSchema = new Mongoose.Schema(
   {
     userName: {
@@ -10,10 +11,15 @@ const UserSchema = new Mongoose.Schema(
       type: String,
       required: true,
     },
+    password:{
+        type:String,
+        required:true,
+        minlength:4
+    },
     email: {
       type: String,
       required: true,
-      unique: true,
+      unique: true
     },
     flowers: [{
         type:Mongoose.Schema.Types.ObjectId,
