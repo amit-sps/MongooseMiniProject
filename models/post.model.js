@@ -1,5 +1,42 @@
 const Mongoose=require("mongoose");
 
+const likesSchema=new Mongoose.Schema({
+    userId:{
+        type:Mongoose.Schema.Types.ObjectId,
+        ref:"user"
+    },
+    post:{
+        type:Mongoose.Schema.Types.ObjectId,
+        ref:"post"
+    }
+})
+const disLikesSchema=new Mongoose.Schema({
+    userId:{
+        type:Mongoose.Schema.Types.ObjectId,
+        ref:"user"
+    },
+    post:{
+        type:Mongoose.Schema.Types.ObjectId,
+        ref:"post"
+    }
+})
+const commentSchema=new Mongoose.Schema({
+    text:{
+        type:String,
+        required:true
+    },
+    userId:{
+        type:Mongoose.Schema.Types.ObjectId,
+        ref:"user",
+        required:true
+    },
+    post:{
+        type:Mongoose.Schema.Types.ObjectId,
+        ref:"post",
+        required:true
+    }
+})
+
 const PostSchema=new Mongoose.Schema({
     tittle:{
         type:String,
@@ -37,42 +74,7 @@ const PostSchema=new Mongoose.Schema({
     }]
 })
 
-const likesSchema=new Mongoose.Schema({
-    userId:{
-        type:Mongoose.Schema.Types.ObjectId,
-        ref:"user"
-    },
-    post:{
-        type:Mongoose.Schema.Types.ObjectId,
-        ref:"post"
-    }
-})
-const disLikesSchema=new Mongoose.Schema({
-    userId:{
-        type:Mongoose.Schema.Types.ObjectId,
-        ref:"user"
-    },
-    post:{
-        type:Mongoose.Schema.Types.ObjectId,
-        ref:"post"
-    }
-})
-const commentSchema=new Mongoose.Schema({
-    text:{
-        type:String,
-        required:true
-    },
-    userId:{
-        type:Mongoose.Schema.Types.ObjectId,
-        ref:"user",
-        required:true
-    },
-    post:{
-        type:Mongoose.Schema.Types.ObjectId,
-        ref:"post",
-        required:true
-    }
-})
+
 
 exports.post=new Mongoose.model("post",PostSchema);
 exports.likes=new Mongoose.model("like",likesSchema);

@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "968d3c37-e881-458f-827c-30c970b81361",
+		"name": "blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mini Project",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\":\"amit124\",\r\n    \"Name\":\"Amit Thakur\",\r\n    \"email\":\"amit1@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9704/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"amit@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9704/auth/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "createPost",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExYmYyY2YyMmEzYjM5MTBiZWZkZjciLCJpYXQiOjE2NTQ4NTIwODJ9.aFV7pLm0S1IkFxGU8tj6ZCg2k4vKNftv6xdWi2Mn67g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tittle\":\"This is Tittle9\",\r\n    \"subtittle\":\"This is Sub Tittle9\",\r\n    \"content\":\"This is Content9\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9704/post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllPost",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9704/post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "my post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExZDJjNzA0NGUxMTcxNDUyNGEyYzAiLCJpYXQiOjE2NTQ4NTE3ODd9.LJFIJPcoaJ8wLZYUYlrrnjnU831VD4Iakk6sYXeXm3k",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9704/post/mypost",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post",
+										"mypost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Like Post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExYmYyY2YyMmEzYjM5MTBiZWZkZjciLCJpYXQiOjE2NTQ4MzMzMDN9.6tnnOnaUimfRg_KLLddwkJReSgn0sTXbo0Kd_ccRvTw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9704/post/like/62a308a8a1de4b5185698a95",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post",
+										"like",
+										"62a308a8a1de4b5185698a95"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Dislike post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExYmYyY2YyMmEzYjM5MTBiZWZkZjciLCJpYXQiOjE2NTQ4MzMzMDN9.6tnnOnaUimfRg_KLLddwkJReSgn0sTXbo0Kd_ccRvTw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9704/post/dislike/62a308eba1de4b5185698a9a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post",
+										"dislike",
+										"62a308eba1de4b5185698a9a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExYmYyY2YyMmEzYjM5MTBiZWZkZjciLCJpYXQiOjE2NTQ4NDE2MDB9.pXZeQ0AtJus6ksYYlm8sFyB00etWBgFlV30cioTKyKg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\":\"great post1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9704/post/comment/62a308eba1de4b5185698a9a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post",
+										"comment",
+										"62a308eba1de4b5185698a9a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExYmYyY2YyMmEzYjM5MTBiZWZkZjciLCJpYXQiOjE2NTQ4NDE2MDB9.pXZeQ0AtJus6ksYYlm8sFyB00etWBgFlV30cioTKyKg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tittle\":\"This is Tittless\",\r\n    \"subtittle\":\"This is Sub Tittle\",\r\n    \"content\":\"This is Content\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9704/post/update/62a308a8a1de4b5185698a95",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post",
+										"update",
+										"62a308a8a1de4b5185698a95"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExYmYyY2YyMmEzYjM5MTBiZWZkZjciLCJpYXQiOjE2NTQ4NDE2MDB9.pXZeQ0AtJus6ksYYlm8sFyB00etWBgFlV30cioTKyKg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9704/post/62a308a8a1de4b5185698a95",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post",
+										"62a308a8a1de4b5185698a95"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmExYmYyY2YyMmEzYjM5MTBiZWZkZjciLCJpYXQiOjE2NTQ4NTIwODJ9.aFV7pLm0S1IkFxGU8tj6ZCg2k4vKNftv6xdWi2Mn67g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\":\"the great post!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9704/post/comment/62a30987a1de4b5185698ab1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9704",
+									"path": [
+										"post",
+										"comment",
+										"62a30987a1de4b5185698ab1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
