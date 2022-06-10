@@ -3,20 +3,25 @@ const Mongoose=require("mongoose");
 const PostSchema=new Mongoose.Schema({
     tittle:{
         type:String,
-        required:true
+        required:true,
+        minlength:5,
+        maxlength:50
     },
     subtittle:{
         type:String,
-        required:true
+        required:true,
+        minlength:5,
+        maxlength:50
     },
-    image:{
+    content:{
         type:String,
         required:true,
-        default:""
+        minlength:5,
     },
     uploadedBy:{
         type:Mongoose.Schema.Types.ObjectId,
-        ref:"user"
+        ref:"User",
+        required:true
     },
     likes:[{
         type:Mongoose.Schema.Types.ObjectId,

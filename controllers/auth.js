@@ -41,6 +41,7 @@ exports.signin=async(req,res)=>{
         const token=await jwt.sign({_id:theUser._id},process.env.tokenkey);
         return res.status(200).json({user:theUser,token});
     }catch(err){
+        return res.status(400).send("Invalid User !")
         console.log(err)
     }
 }
